@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "8b4da318-c38a-48d6-9a13-e11984018642",
+		"name": "Robulva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27432271"
+	},
+	"item": [
+		{
+			"name": "add task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mohamed\",\r\n    \"title\":\"First Task\",\r\n    \"notes\":\"some notes\",\r\n    \"startTime\":\"2024-06-15T18:01:34.520\",\r\n    \"dueTime\":\"2024-06-18T18:01:34.520\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/task/add-task",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"add-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gettasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/task/get-tasks/:username",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"get-tasks",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "mohamed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mohamed\",\r\n    \"taskId\":14,\r\n    \"title\":\"new task updated\",\r\n    \"notes\":\"new notes\",\r\n    \"startTime\": \"2024-06-16T01:39:53.441289\",\r\n    \"dueTime\": \"2024-06-20T18:01:34.52\",\r\n    \"status\":\"COMPLETED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/task/update-task",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"update-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletetask",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mohamed\",\r\n    \"taskId\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/task/delete-task",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"delete-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mohamed\",\r\n    \"email\":\"mdalaa7912@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/verify/:username",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"verify",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "mohamed"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}
