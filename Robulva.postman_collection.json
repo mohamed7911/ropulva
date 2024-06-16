@@ -36,6 +36,42 @@
 			"response": []
 		},
 		{
+			"name": "sync tasks",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/task/sync-task/:username",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"sync-task",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "mohamed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "gettasks",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
